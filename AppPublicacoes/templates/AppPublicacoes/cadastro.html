@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Cadastrar Publicação </title>
+    </head>
+    <body>
+        <h1> Cadastro de publicação </h1>
+        <hr>
+        <p> Insira o título, descrição, nome e sobrenome do autor: </p>
+        <form method='POST' action='/AppPublicacoes/Cadastro/PublicacaoCadastrada/'>
+            {% csrf_token %}
+            {{form.as_p}}
+            <button type="submit">Cadastrar </button>
+        </form>
+    </body>
+</html>

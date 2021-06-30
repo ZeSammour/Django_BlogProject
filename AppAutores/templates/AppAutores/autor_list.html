@@ -1,0 +1,10 @@
+{% block content%}
+<h1> Lista de Autores e Autoras </h1> 
+<hr/> 
+{% endblock%}
+<ul>
+    {% for autor in autor_list%}
+    <li> {{autor.nome}} {{autor.sobrenome}}</li>
+    <br>
+    {% endfor%}
+</ul>

@@ -1,0 +1,20 @@
+{% block content%}
+<h1> Lista de Publicações </h1> 
+<hr/>
+<h2> Filtrar por Autor </h2>
+<form method='POST' action='/AppPublicacoes/ListaPublicacoes/Filtro/'>
+    {% csrf_token %}
+    {{form.as_p}}
+    <button type="submit">Filtrar </button>
+</form>
+<hr/> 
+{% endblock%}
+<ul>
+    {% for publicacao in publicacao_list%}
+    <li> {{publicacao.titulo}} <br> 
+    {{publicacao.descricao}} <br> 
+    {{publicacao.autor.nome}} {{publicacao.autor.sobrenome}} 
+    </li>
+    <hr/>
+    {% endfor%}
+</ul>

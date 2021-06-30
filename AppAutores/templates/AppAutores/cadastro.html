@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Cadastrar autor(a) </title>
+    </head>
+    <body>
+        <h1> Cadastro de autor(a) </h1>
+        <hr>
+        <p> Insira o nome e sobrenome do(a) autor(a) abaixo: </p>
+        <form method='POST' action='/AppAutores/Cadastro/AutorCadastrado/'>
+            {% csrf_token %}
+            {{form.as_p}}
+            <button type="submit">Cadastrar </button>
+        </form>
+    </body>
+</html>

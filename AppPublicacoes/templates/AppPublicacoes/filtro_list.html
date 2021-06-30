@@ -1,0 +1,17 @@
+{% block content%}
+<h1> Publicações de {{autor.nome}} {{autor.sobrenome}}  </h1> 
+<hr/>
+{% endblock%}
+{% if not publicacoes%}
+<p> Não há publicações cadastradas deste(a) autor(a)</p>
+{% else %}
+<ul>
+    {% for publicacao in publicacoes%}
+    <li> {{publicacao.titulo}} <br> 
+    {{publicacao.descricao}} <br> 
+    {{publicacao.autor.nome}} {{publicacao.autor.sobrenome}} 
+    </li>
+    <hr/>
+    {% endfor%}
+</ul>
+{% endif%}
