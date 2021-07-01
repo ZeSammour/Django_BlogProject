@@ -8,9 +8,6 @@ from .forms import *
 class ListaAutores(ListView):
     model = Autor
     
-def menu(request):
-    return render(request, 'AppAutores/menu.html')
-
 def cadastro(request):
     form = cadastrarUsuario()
     return render(request, 'AppAutores/cadastro.html',{"form":form})
@@ -25,6 +22,6 @@ def autorCadastrado(request):
         s = form.cleaned_data["sobrenome"]
         a = Autor(nome=n, sobrenome=s)
         a.save()
-    return HttpResponse('<h1>Autor Cadastrado</h1>')
+    return render(request, 'AppPublicacoes/msg.html', {'msg': 'Autor cadastrado com sucesso!'})
 
 

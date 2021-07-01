@@ -1,7 +1,10 @@
-{% block content%}
+{% extends 'base.html' %}
+
+{% block title %} Publicações de {{autor.nome}} {{autor.sobrenome}} {% endblock title %}
+
+{% block content %}
 <h1> Publicações de {{autor.nome}} {{autor.sobrenome}}  </h1> 
 <hr/>
-{% endblock%}
 {% if not publicacoes%}
 <p> Não há publicações cadastradas deste(a) autor(a)</p>
 {% else %}
@@ -15,3 +18,5 @@
     {% endfor%}
 </ul>
 {% endif%}
+{% endblock content %}
+

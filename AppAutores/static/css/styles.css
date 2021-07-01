@@ -1,0 +1,51 @@
+.container-fluid{
+    padding-bottom: 1cm;
+}
+
+/* NavBar */
+
+.navbar{
+    border-bottom: 1px solid #333;
+    margin-bottom: 10px;
+}
+
+.navbar-nav{
+    margin: auto;
+}
+
+.navbar-brand{
+    font-weight: bold;
+}
+
+/* Lista de autores */
+
+.list-div{
+    padding: 0;
+}
+
+.autor-list{
+    padding-left: 0;
+}
+
+.autor-item{
+    list-style: none;
+    font-size: 20px;
+    height: 40px;
+    padding-top: 10;
+}
+
+/* Rodapé */
+
+footer{
+    padding: 5px;
+    background-color: #333;
+    height: 100px;
+    border-top: 2px solid #202020;
+}
+
+footer p{
+    color: #f5f5f5;
+    text-align: center;
+    top: 50%;
+    position: relative;
+}

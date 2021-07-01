@@ -1,4 +1,8 @@
-{% block content%}
+{% extends 'base.html' %}
+
+{% block title %} Publicações {% endblock title %}
+
+{% block content %}
 <h1> Lista de Publicações </h1> 
 <hr/>
 <h2> Filtrar por Autor </h2>
@@ -8,7 +12,6 @@
     <button type="submit">Filtrar </button>
 </form>
 <hr/> 
-{% endblock%}
 <ul>
     {% for publicacao in publicacao_list%}
     <li> {{publicacao.titulo}} <br> 
@@ -18,3 +21,5 @@
     <hr/>
     {% endfor%}
 </ul>
+{% endblock content %}
+

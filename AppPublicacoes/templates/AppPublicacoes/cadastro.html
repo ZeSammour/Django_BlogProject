@@ -1,10 +1,9 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title> Cadastrar Publicação </title>
-    </head>
-    <body>
-        <h1> Cadastro de publicação </h1>
+{% extends 'base.html' %}
+
+{% block title %} Cadastrar Publicação {% endblock title %}  
+
+{% block content %}
+    <h1> Cadastro de publicação </h1>
         <hr>
         <p> Insira o título, descrição, nome e sobrenome do autor: </p>
         <form method='POST' action='/AppPublicacoes/Cadastro/PublicacaoCadastrada/'>
@@ -12,5 +11,5 @@
             {{form.as_p}}
             <button type="submit">Cadastrar </button>
         </form>
-    </body>
-</html>
+        <br>
+{% endblock content %}

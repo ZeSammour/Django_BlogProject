@@ -34,9 +34,9 @@ def publicacaoCadastrada(request):
             a = Autor.objects.get(nome=n, sobrenome=s)
             p = Publicacao(titulo=t, descricao=d, autor=a)
             p.save()
-            return HttpResponse('<h1>Publicação Cadastrada</h1>')
+            return render(request, 'AppPublicacoes/msg.html', {'msg': 'Publicação cadastrada com sucesso!'})
         except:
-            return HttpResponse('<h1>Autor(a) não cadastrado(a)</h1>')    
+            return render(request, 'AppPublicacoes/msg.html', {'msg': '%s %s ainda não está cadastrado como autor :(' %(n,s)}) 
 
 def publicacoesPorAutor(request):
     form = filtrarPorAutor(request.POST)
@@ -49,7 +49,7 @@ def publicacoesPorAutor(request):
             numero_publicacoes = a.publicacao_set.count()
             return render(request, 'AppPublicacoes/filtro_list.html',{"publicacoes":publicacoes_autor, "numero_publicacoes":numero_publicacoes, "autor":a,})
         except:
-            return HttpResponse('<h1>  Autor não encontrado</h1>')
+            return render(request, 'AppPublicacoes/msg.html', {'msg': 'Autor não cadastrado'})
     
 
 

@@ -1,10 +1,19 @@
-{% block content%}
-<h1> Lista de Autores e Autoras </h1> 
-<hr/> 
-{% endblock%}
-<ul>
+{% extends 'base.html' %}
+
+{% block title %} Lista de Autores {% endblock title %} 
+
+{% block content %} 
+<h1> Lista de autores </h1>
+<hr/>
+<ul class="autor-list">
     {% for autor in autor_list%}
-    <li> {{autor.nome}} {{autor.sobrenome}}</li>
+    <li class="autor-item">
+        <span> 
+            {{autor.nome}} {{autor.sobrenome}}
+        </span>
+    </li>
     <br>
     {% endfor%}
 </ul>
+{% endblock content %}
+
